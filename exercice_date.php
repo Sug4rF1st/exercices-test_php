@@ -19,9 +19,11 @@
 <p>Exercice 1 : Trouver le numéro de semaine de la date suivante : 14/07/2019</p>
 <hr>
 
-    <?php
+    <?php 
+    
         $date=explode('-','2019-07-14');
-        echo date('W', mktime(0,0,0,$date[1], $date[2], $date[0]));
+        echo date('W', mktime(0,0,0,$date[1], $date[2], $date[0])); 
+        
     ?>
 
 <hr>
@@ -30,6 +32,7 @@
 
 <table>
     <?php
+    
         $dateActuel = date ("d-m-Y");
         echo "\n";
         $dateFormation = date("31-08-2022");
@@ -39,7 +42,8 @@
         $months = floor(($diff - $Years * 365 * 60 * 60 * 24) / (30 * 60 * 60 * 24));
         $days   = floor(($diff - $Years * 365 * 60 * 60 * 24 - $months * 30 * 60 * 60 * 24) / (60 * 60 * 24));
 
-        echo $Years." Années, ".$months. " Mois et ".$days." Jours";
+        echo $Years." Années, ".$months. " Mois et ".$days." Jours"; 
+        
     ?>
 </table>
 
@@ -48,6 +52,15 @@
 <hr>
 
 <?php
+/*
+$annee3 = 2000;
+$annee4 = DateTime::createFromFormat('Y', $annee3)->format('L') === "1";
+var_dump ($annee4);
+*/
+?>
+
+<?php
+
 function bissextile($annee) {
 	if( (is_int($annee/4) && !is_int($annee/100)) or is_int($annee/400)) {
 		return TRUE;
@@ -79,6 +92,7 @@ echo ' bissextile.';
 <hr>
 
 <?php
+
 $datePattern = "/^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$/";
 $date = "32/17/2019";
 
@@ -98,9 +112,11 @@ else
 <hr>
 
 <?php
+
     echo date("H");
     echo ("h");
     echo date("i");
+
 ?>
 
 <hr>
@@ -108,7 +124,9 @@ else
 <hr>
 
 <?php
+
 echo date("d/m/Y", strtotime("+1month"));
+
 ?>
 
 <hr>
@@ -116,7 +134,9 @@ echo date("d/m/Y", strtotime("+1month"));
 <hr>
 
 <?php
-    echo date("d/m/Y", 1000200000);
+
+    echo date("d/m/Y", 1000200000); 
+
 ?>
 
 </body>
