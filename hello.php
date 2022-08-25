@@ -1,11 +1,3 @@
-<?php
-function writeMessage($text) {
-    $html = "<h1>".$text."</h1>";
-
-    echo $html;
-}
-?>
-
 <!DOCTYPE html>
 
 <html lang="fr">
@@ -16,6 +8,8 @@ function writeMessage($text) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="styleshee" href="/style.css">
+
     <title>Inclusion de fichiers PHP</title>
 
 </head>
@@ -23,16 +17,15 @@ function writeMessage($text) {
 <body>
 
 <?php
-$message = "Bienvenue à l'AFPA !";
+if (file_exists("fonction.php")){
+    include("fonction.php");
+}
+else {
 
-writeMessage($message);
+}
 ?>
 
-<br>
-
-<?php
-writeMessage("Bonjour tout le monde !");
-?>
+<script src="js/scripts.js"></script>
 
 </body>
 
